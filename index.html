@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <input type="text" placeholder="Заголовок" id="title" name="title" />
+          <input
+            type="text"
+            placeholder="Текст"
+            id="paragraph"
+            name="paragraph"
+          />
+          <input type="text" placeholder="Ссылка на картинку" id="file" name="file" />
+          <button type="submit" class="submit">Отправить</button>
+        </div>
+      </header>
+      <main class="main">
+        <template class="template">
+          <ul class="ul">
+            <img class="image" />
+            <h1 class="title"></h1>
+            <p class="paragraph"></p>
+            <button class="unlike"></button>
+            <button class="delete"></button>
+          </ul>
+        </template>
+      </main>
+      <footer></footer>
+      <script src="scripts/script.js"></script>
+    </div>
+  </body>
+</html>

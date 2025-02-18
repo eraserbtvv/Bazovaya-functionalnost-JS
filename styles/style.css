@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+body {
+    height: 100vh;
+    background-image: url(../images/eko.jpg);
+    background-size:cover;
+    z-index: -1;
+}
+
+header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ul {
+    background-color: #e6f7e7;
+    margin-bottom: 20px;
+}
+
+button {
+    cursor: pointer;
+    border: 0
+}
+
+button:hover {
+    border: 1px solid red;
+}
+
+.submit {
+    border: 1px solid black;
+    margin-top: 10px;
+    border-radius: 7%;
+    height: 20px;
+    width: 100px;
+}
+
+.unlike {
+    margin-top: 10px;
+    background-image: url(../images/unlike.jpg);
+    background-size: contain;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+.like {
+    background-image: url(../images/like.jpg);
+}
+
+.delete {
+    background-image: url(../images/delete.png);
+    background-size: cover;
+    background-position: bottom;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 10%;
+}
+
+.image {
+    width: 300px;
+}
+
+.container {    
+    text-align: center;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.ul {
+    border: 1px solid #222222;
+    padding: 5px;
+    border-radius: 13px;
+    position: relative;
+}
