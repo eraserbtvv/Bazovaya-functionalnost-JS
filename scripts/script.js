@@ -39,6 +39,26 @@ function renderHTML() {
   renderButtons()
 }
 
+function renderSubmit () {
+  let title = document.querySelector("#title").value;
+  let paragraph = document.querySelector("#paragraph").value;
+  let file = document.querySelector("#file").value;
+
+  const newID = data.length > 0 ? data[0].id + 1 : 1;//Мог использовать data.lenght + 1, но тогда бы она работала криво. Так они встают ровно с помощью тернарного оператора
+  const newObject = {
+    id: newID,
+    image: file,
+    title: title,
+    paragraph: paragraph,
+  };
+  data.unshift(newObject);
+  console.log(data);
+
+  renderHTML()
+};
+
+submitButton.addEventListener('click', renderSubmit);
+
 renderButtons()
 
 let data = [
@@ -64,23 +84,5 @@ let data = [
       "Проведение кампаний по повышению осведомленности о важности снижения углеродного следа",
   },
 ];
-
-submitButton.addEventListener("click", function () {
-  let title = document.querySelector("#title").value;
-  let paragraph = document.querySelector("#paragraph").value;
-  let file = document.querySelector("#file").value;
-
-  const newID = data.length > 0 ? data[0].id + 1 : 1;//Мог использовать data.lenght + 1, но тогда бы она работала криво. Так они встают ровно с помощью тернарного оператора
-  const newObject = {
-    id: newID,
-    image: file,
-    title: title,
-    paragraph: paragraph,
-  };
-  data.unshift(newObject);
-  console.log(data);
-
-  renderHTML()
-});
 
 renderHTML();
