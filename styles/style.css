@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     background-image: url(../images/eko.jpg);
-    background-size:cover;
+    background-size: cover;
     z-index: -1;
 }
 
@@ -67,7 +67,7 @@ button:hover {
     width: 300px;
 }
 
-.container {    
+.container {
     text-align: center;
     width: 550px;
     margin-left: auto;
@@ -76,7 +76,7 @@ button:hover {
 
 ul {
     list-style-type: none;
-  }
+}
 
 .ul {
     border: 1px solid #222222;

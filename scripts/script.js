@@ -3,23 +3,23 @@ const template = document.querySelector("template").content;
 const submitButton = document.querySelector(".submit");
 
 function renderButtons() {
-  const likeButton = document.querySelectorAll('.unlike')
-  const deleteButton = document.querySelectorAll('.delete')
-  
-  likeButton.forEach(eventLike => {
-      eventLike.addEventListener("click", () => {
-          eventLike.classList.toggle('like')
-      })
-  })
-  
-  deleteButton.forEach(eventDelete => {
-      eventDelete.addEventListener("click", () => {
-        const cardID = parseInt(eventDelete.parentNode.getAttribute("id"));//Мы это не проходили, но parseint преобразовывает строку в число, а floor не работает
-        data = data.filter(item => item.id !== cardID);
-        eventDelete.parentNode.remove();
-        console.log(data)
-      })
-  })
+  const likeButton = document.querySelectorAll(".unlike");
+  const deleteButton = document.querySelectorAll(".delete");
+
+  likeButton.forEach((eventLike) => {
+    eventLike.addEventListener("click", () => {
+      eventLike.classList.toggle("like");
+    });
+  });
+
+  deleteButton.forEach((eventDelete) => {
+    eventDelete.addEventListener("click", () => {
+      const cardID = parseInt(eventDelete.parentNode.getAttribute("id")); //Мы это не проходили, но parseint преобразовывает строку в число, а floor не работает
+      data = data.filter((item) => item.id !== cardID);
+      eventDelete.parentNode.remove();
+      console.log(data);
+    });
+  });
 }
 
 function renderHTML() {
@@ -33,18 +33,18 @@ function renderHTML() {
     clone.querySelector(".paragraph").textContent = item.paragraph;
 
     clone.querySelector(".ul").setAttribute("id", item.id);
-    
+
     main.appendChild(clone);
   });
-  renderButtons()
+  renderButtons();
 }
 
-function renderSubmit () {
+function renderSubmit() {
   let title = document.querySelector("#title").value;
   let paragraph = document.querySelector("#paragraph").value;
   let file = document.querySelector("#file").value;
 
-  const newID = data.length > 0 ? data[0].id + 1 : 1;//Мог использовать data.lenght + 1, но тогда бы она работала криво. Так они встают ровно с помощью тернарного оператора
+  const newID = data.length > 0 ? data[0].id + 1 : 1; //Мог использовать data.lenght + 1, но тогда бы она работала криво. Так они встают ровно с помощью тернарного оператора
   const newObject = {
     id: newID,
     image: file,
@@ -54,12 +54,12 @@ function renderSubmit () {
   data.unshift(newObject);
   console.log(data);
 
-  renderHTML()
-};
+  renderHTML();
+}
 
-submitButton.addEventListener('click', renderSubmit);
+submitButton.addEventListener("click", renderSubmit);
 
-renderButtons()
+renderButtons();
 
 let data = [
   {
